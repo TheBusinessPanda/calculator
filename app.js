@@ -38,6 +38,30 @@ function operate(val1, operator, val2) {
     }
 }
 
+let buttons = document.querySelectorAll('button');
+let display = document.querySelector('.display');
+
+buttons.forEach((button) => {
+    if (!operand1) {
+        button.addEventListener('click', () => {
+            display.innerText = button.innerText;
+            operand1 = button.innerText;
+        });
+    } if (!operator) {
+        button.addEventListener('click', () => {
+            display.innerText = button.innerText;
+            operator = button.innerText;
+        });
+    } if (!operand2) {
+        button.addEventListener('click', () => {
+            display.innerText = button.innerText;
+            operand2 = button.innerText;
+        });
+    }
+});
+
+
+;
 // Make eventlisteners for all buttons
 // make a variable for operand1, operator, and operand2
 // update operand1 when a number is pressed
